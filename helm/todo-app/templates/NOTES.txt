@@ -1,0 +1,8 @@
+Todo App deployed successfully!
+
+Frontend is available via NodePort: {{ .Values.frontend.service.nodePort }}
+
+To access locally, run:
+  kubectl port-forward -n {{ .Values.namespace }} svc/todo-frontend 8081:80
+
+Then open: http://localhost:8081

@@ -1,0 +1,28 @@
+# values.yaml - Todo App Helm Chart
+# Central configuration for mongodb, backend, and frontend
+
+namespace: todo-app
+
+mongodb:
+  image: mongo:7
+  pullPolicy: Never
+  port: 27017
+  storage: 1Gi
+
+backend:
+  image: localhost/todo-backend:1.0
+  pullPolicy: Never
+  port: 3000
+  env:
+    mongoUri: "mongodb://mongodb:27017/todo-app"
+    jwtSecret: "mySuperSecretKey123ChangeThisLater"
+    jwtExpiresIn: "7d"
+    nodeEnv: "development"
+
+frontend:
+  image: localhost/todo-frontend:1.1
+  pullPolicy: Never
+  port: 80
+  service:
+    type: NodePort
+    nodePort: 30080
