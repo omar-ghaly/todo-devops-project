@@ -6,7 +6,7 @@
 - Backend: Node.js, Express 5, MongoDB (Mongoose), JWT Authentication
 - Frontend: React, Vite
 - Containerization: Podman (Docker-compatible), Podman Compose
-- Orchestration: Kubernetes (Kind) - قيد التنفيذ
+- Orchestration: Kubernetes (Kind) - مكتمل ✅
 - Package Management: Helm - قيد التنفيذ
 - CI/CD: GitHub Actions - قيد التنفيذ
 - Code Quality: SonarQube - قيد التنفيذ
@@ -17,7 +17,7 @@ todo-devops-project/
 - backend/   (Node.js/Express API)
 - frontend/  (React/Vite SPA)
 - helm/      (Helm charts - قيد التنفيذ)
-- k8s/       (Kubernetes manifests - قيد التنفيذ)
+- k8s/       (Kubernetes manifests - مكتمل ✅)
 - docker-compose.yml
 
 ## تشغيل المشروع محليًا
@@ -48,7 +48,7 @@ docker ps
 - [x] Frontend
 - [x] Containerization (Podman)
 - [x] Docker Compose orchestration
-- [ ] Kubernetes (Kind)
+- [x] Kubernetes (Kind)
 - [ ] Helm Charts
 - [ ] CI/CD (GitHub Actions)
 - [ ] Code Quality (SonarQube)
