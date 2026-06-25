@@ -7,7 +7,7 @@
 - Frontend: React, Vite
 - Containerization: Podman (Docker-compatible), Podman Compose
 - Orchestration: Kubernetes (Kind) - مكتمل ✅
-- Package Management: Helm - قيد التنفيذ
+- Package Management: Helm - مكتمل ✅
 - CI/CD: GitHub Actions - قيد التنفيذ
 - Code Quality: SonarQube - قيد التنفيذ
 - Testing: Jest, Cypress - قيد التنفيذ
@@ -16,7 +16,7 @@
 todo-devops-project/
 - backend/   (Node.js/Express API)
 - frontend/  (React/Vite SPA)
-- helm/      (Helm charts - قيد التنفيذ)
+- helm/      (Helm charts - مكتمل ✅)
 - k8s/       (Kubernetes manifests - مكتمل ✅)
 - docker-compose.yml
 
@@ -49,7 +49,7 @@ docker ps
 - [x] Containerization (Podman)
 - [x] Docker Compose orchestration
 - [x] Kubernetes (Kind)
-- [ ] Helm Charts
+- [x] Helm Charts
 - [ ] CI/CD (GitHub Actions)
 - [ ] Code Quality (SonarQube)
 - [ ] Automated Testing (Jest/Cypress)
