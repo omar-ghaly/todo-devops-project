@@ -8,7 +8,7 @@
 - Containerization: Podman (Docker-compatible), Podman Compose
 - Orchestration: Kubernetes (Kind) - مكتمل ✅
 - Package Management: Helm - مكتمل ✅
-- CI/CD: GitHub Actions - قيد التنفيذ
+- CI/CD: GitHub Actions - مكتمل ✅
 - Code Quality: SonarQube - قيد التنفيذ
 - Testing: Jest, Cypress - قيد التنفيذ
 
@@ -50,6 +50,6 @@ docker ps
 - [x] Docker Compose orchestration
 - [x] Kubernetes (Kind)
 - [x] Helm Charts
-- [ ] CI/CD (GitHub Actions)
+- [x] CI/CD (GitHub Actions)
 - [ ] Code Quality (SonarQube)
 - [ ] Automated Testing (Jest/Cypress)
