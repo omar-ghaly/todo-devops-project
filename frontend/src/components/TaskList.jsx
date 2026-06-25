@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { getTasks, createTask, updateTask, deleteTask } from "../services/api";
 
 function TaskList({ token, onLogout }) {
@@ -6,18 +6,19 @@ function TaskList({ token, onLogout }) {
   const [newTitle, setNewTitle] = useState("");
   const [error, setError] = useState("");
 
-  const loadTasks = async () => {
+  const loadTasks = useCallback(async () => {
     try {
       const data = await getTasks(token);
       setTasks(Array.isArray(data) ? data : []);
-    } catch (err) {
+    } catch {
       setError("Failed to load tasks");
     }
-  };
+  }, [token]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: fetch tasks on mount
     loadTasks();
-  }, []);
+  }, [loadTasks]);
 
   const handleAdd = async (e) => {
     e.preventDefault();

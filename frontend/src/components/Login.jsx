@@ -28,7 +28,7 @@ function Login({ onLoginSuccess }) {
         }
         onLoginSuccess(data.token);
       }
-    } catch (err) {
+    } catch {
       setError("Something went wrong. Check your connection.");
     }
   };
