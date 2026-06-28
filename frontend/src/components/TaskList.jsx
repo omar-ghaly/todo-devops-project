@@ -1,6 +1,17 @@
 import { useState, useEffect, useCallback } from "react";
 import { getTasks, createTask, updateTask, deleteTask } from "../services/api";
 
+function formatDateTime(isoString) {
+  if (!isoString) return "";
+  const date = new Date(isoString);
+  return date.toLocaleString(undefined, {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
 function TaskList({ token, onLogout }) {
   const [tasks, setTasks] = useState([]);
   const [newTitle, setNewTitle] = useState("");
@@ -38,61 +49,69 @@ function TaskList({ token, onLogout }) {
     loadTasks();
   };
 
+  const completedCount = tasks.filter((t) => t.completed).length;
+
   return (
-    <div style={{ maxWidth: "500px", margin: "60px auto" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h2>My Tasks</h2>
-        <button onClick={onLogout} style={{ cursor: "pointer" }}>
-          Logout
-        </button>
-      </div>
+    <div className="tasks-page">
+      <div className="tasks-container">
+        <div className="tasks-header">
+          <div>
+            <h2 className="tasks-title">My Tasks</h2>
+            {tasks.length > 0 && (
+              <p className="tasks-stats">
+                {completedCount} of {tasks.length} completed
+              </p>
+            )}
+          </div>
+          <button onClick={onLogout} className="btn btn-secondary" style={{ width: "auto" }}>
+            Logout
+          </button>
+        </div>
 
-      <form onSubmit={handleAdd} style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-        <input
-          type="text"
-          placeholder="New task..."
-          value={newTitle}
-          onChange={(e) => setNewTitle(e.target.value)}
-          style={{ flex: 1, padding: "8px" }}
-        />
-        <button type="submit" style={{ padding: "8px 16px", cursor: "pointer" }}>
-          Add
-        </button>
-      </form>
+        <form onSubmit={handleAdd} className="add-task-form">
+          <input
+            type="text"
+            placeholder="What needs to be done?"
+            value={newTitle}
+            onChange={(e) => setNewTitle(e.target.value)}
+            className="form-input"
+          />
+          <button type="submit" className="btn btn-primary btn-add">
+            Add
+          </button>
+        </form>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="task-error">{error}</p>}
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
         {tasks.map((task) => (
-          <li
-            key={task._id}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              padding: "10px",
-              borderBottom: "1px solid #ddd",
-            }}
-          >
-            <span
-              onClick={() => handleToggle(task)}
-              style={{
-                cursor: "pointer",
-                textDecoration: task.completed ? "line-through" : "none",
-                color: task.completed ? "#888" : "#000",
-                flex: 1,
-              }}
-            >
-              {task.title}
-            </span>
-            <button onClick={() => handleDelete(task._id)} style={{ cursor: "pointer" }}>
+          <div className="task-card" key={task._id}>
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => handleToggle(task)}
+              className="task-checkbox"
+            />
+            <div className="task-body">
+              <div className={`task-title ${task.completed ? "completed" : ""}`}>
+                {task.title}
+              </div>
+              <div className="task-meta">
+                <span>Created {formatDateTime(task.createdAt)}</span>
+                {task.completed && (
+                  <span className="done-badge">✓ Done {formatDateTime(task.updatedAt)}</span>
+                )}
+              </div>
+            </div>
+            <button onClick={() => handleDelete(task._id)} className="btn-danger">
               Delete
             </button>
-          </li>
+          </div>
         ))}
-      </ul>
 
-      {tasks.length === 0 && <p style={{ color: "#888" }}>No tasks yet. Add one above!</p>}
+        {tasks.length === 0 && (
+          <p className="empty-state">No tasks yet. Add one above to get started!</p>
+        )}
+      </div>
     </div>
   );
 }

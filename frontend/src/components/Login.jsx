@@ -34,46 +34,61 @@ function Login({ onLoginSuccess }) {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "100px auto", textAlign: "center" }}>
-      <h2>{isRegister ? "Register" : "Login"}</h2>
-      <form onSubmit={handleSubmit}>
-        {isRegister && (
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            style={{ display: "block", width: "100%", marginBottom: "10px", padding: "8px" }}
-          />
-        )}
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={{ display: "block", width: "100%", marginBottom: "10px", padding: "8px" }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={{ display: "block", width: "100%", marginBottom: "10px", padding: "8px" }}
-        />
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit" style={{ width: "100%", padding: "10px" }}>
-          {isRegister ? "Register" : "Login"}
-        </button>
-      </form>
-      <p style={{ marginTop: "15px" }}>
-        {isRegister ? "Already have an account?" : "Don't have an account?"}{" "}
-        <button onClick={() => setIsRegister(!isRegister)} style={{ cursor: "pointer" }}>
-          {isRegister ? "Login here" : "Register here"}
-        </button>
-      </p>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h2 className="auth-title">{isRegister ? "Create account" : "Welcome back"}</h2>
+        <p className="auth-subtitle">
+          {isRegister ? "Sign up to start organizing your tasks" : "Log in to continue"}
+        </p>
+
+        <form onSubmit={handleSubmit}>
+          {isRegister && (
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                className="form-input"
+              />
+            </div>
+          )}
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="form-input"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="form-input"
+            />
+          </div>
+
+          {error && <p className="auth-error">{error}</p>}
+
+          <button type="submit" className="btn btn-primary">
+            {isRegister ? "Register" : "Login"}
+          </button>
+        </form>
+
+        <p className="auth-switch">
+          {isRegister ? "Already have an account?" : "Don't have an account?"}{" "}
+          <button onClick={() => setIsRegister(!isRegister)} className="link-btn">
+            {isRegister ? "Login here" : "Register here"}
+          </button>
+        </p>
+      </div>
     </div>
   );
 }
