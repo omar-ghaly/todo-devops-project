@@ -8,6 +8,7 @@
 - Containerization: Podman (Docker-compatible), Podman Compose
 - Orchestration: Kubernetes (Kind) - مكتمل ✅
 - Package Management: Helm - مكتمل ✅
+- GitOps: ArgoCD - مكتمل ✅
 - CI/CD: GitHub Actions - مكتمل ✅
 - Code Quality: SonarQube - قيد التنفيذ
 - Testing: Jest, Cypress - قيد التنفيذ
@@ -17,6 +18,7 @@ todo-devops-project/
 - backend/   (Node.js/Express API)
 - frontend/  (React/Vite SPA)
 - helm/      (Helm charts - مكتمل ✅)
+- argocd/    (ArgoCD Application manifest - مكتمل ✅)
 - k8s/       (Kubernetes manifests - مكتمل ✅)
 - docker-compose.yml
 
@@ -50,6 +52,7 @@ docker ps
 - [x] Docker Compose orchestration
 - [x] Kubernetes (Kind)
 - [x] Helm Charts
+- [x] GitOps (ArgoCD)
 - [x] CI/CD (GitHub Actions)
 - [ ] Code Quality (SonarQube)
 - [ ] Automated Testing (Jest/Cypress)
