@@ -21,9 +21,9 @@
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: #f3f4f6;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--text);
+  color: #1f2937;
 }
 
 #root {
@@ -53,7 +53,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   margin: 0 0 8px;
-  color: var(--text);
+  color: #1f2937;
 }
 
 .auth-subtitle {
@@ -74,7 +74,7 @@ body {
   font-size: 14px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--bg);
+  background: #f3f4f6;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .btn-secondary:hover {
-  background: var(--bg);
+  background: #f3f4f6;
 }
 
 .btn-danger {
@@ -253,7 +253,7 @@ body {
 .task-title {
   font-size: 15px;
   font-weight: 500;
-  color: var(--text);
+  color: #1f2937;
   word-break: break-word;
 }
 
