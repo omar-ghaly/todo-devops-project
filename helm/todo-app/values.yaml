@@ -10,7 +10,7 @@ mongodb:
   storage: 1Gi
 
 backend:
-  image: localhost/todo-backend:1.0
+  image: localhost/todo-backend:1.1
   pullPolicy: Never
   port: 3000
   env:
