@@ -1,20 +1,3 @@
-ن:root {
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-light: #eef2ff;
-  --danger: #ef4444;
-  --danger-hover: #dc2626;
-  --success: #10b981;
-  --text: #1f2937;
-  --text-muted: #6b7280;
-  --bg: #f3f4f6;
-  --card-bg: #ffffff;
-  --border: #e5e7eb;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --radius: 10px;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -195,12 +178,6 @@ body {
   margin-top: 4px;
 }
 
-.add-task-form {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
 .add-task-form .form-input {
   flex: 1;
 }
@@ -281,4 +258,158 @@ body {
   color: #6b7280;
   font-size: 14px;
   padding: 40px 20px;
+}
+
+/* ----- Add Task Form (expanded) ----- */
+.add-task-form-full {
+  margin-bottom: 20px;
+}
+
+.add-task-form-full .form-input {
+  margin-bottom: 10px;
+}
+
+.add-task-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-select {
+  cursor: pointer;
+  flex: 1;
+}
+
+/* ----- Toolbar (search + filters) ----- */
+.tasks-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 160px;
+  margin-bottom: 0;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 6px;
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.filter-tab {
+  border: none;
+  background: none;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: background 0.15s, color 0.15s;
+}
+
+.filter-tab.active {
+  background: #ffffff;
+  color: #4f46e5;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.filter-tab:hover:not(.active) {
+  color: #1f2937;
+}
+
+/* ----- Task badges ----- */
+.task-badges {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.badge-low {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge-medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-category {
+  background: #ede9fe;
+  color: #6d28d9;
+  text-transform: none;
+}
+
+.badge-due {
+  background: #f3f4f6;
+  color: #6b7280;
+  text-transform: none;
+}
+
+.badge-overdue {
+  background: #fee2e2;
+  color: #b91c1c;
+  text-transform: none;
+}
+
+/* ----- Task actions & edit mode ----- */
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  background: none;
+  border: 1px solid #e5e7eb;
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background: #eef2ff;
+}
+
+.task-card-editing {
+  border: 1px solid #4f46e5;
+}
+
+.edit-form {
+  width: 100%;
+}
+
+.edit-form .form-input {
+  margin-bottom: 10px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
 }

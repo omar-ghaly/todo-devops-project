@@ -20,7 +20,7 @@ backend:
     nodeEnv: "development"
 
 frontend:
-  image: localhost/todo-frontend:1.4
+  image: localhost/todo-frontend:1.5
   pullPolicy: Never
   port: 80
   service:
