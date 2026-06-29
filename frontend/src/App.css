@@ -40,9 +40,9 @@ body {
 }
 
 .auth-card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 40px;
   width: 100%;
   max-width: 380px;
@@ -59,7 +59,7 @@ body {
 .auth-subtitle {
   text-align: center;
   font-size: 14px;
-  color: var(--text-muted);
+  color: #6b7280;
   margin: 0 0 28px;
 }
 
@@ -72,7 +72,7 @@ body {
   width: 100%;
   padding: 11px 14px;
   font-size: 14px;
-  border: 1px solid var(--border);
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
   background: #f3f4f6;
   transition: border-color 0.15s, box-shadow 0.15s;
@@ -80,9 +80,9 @@ body {
 
 .form-input:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary-light);
-  background: var(--card-bg);
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px #eef2ff;
+  background: #ffffff;
 }
 
 .btn {
@@ -105,18 +105,18 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: #4f46e5;
   color: #fff;
 }
 
 .btn-primary:hover {
-  background: var(--primary-hover);
+  background: #4338ca;
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
 }
 
 .btn-secondary:hover {
@@ -125,7 +125,7 @@ body {
 
 .btn-danger {
   background: transparent;
-  color: var(--danger);
+  color: #ef4444;
   padding: 6px 12px;
   width: auto;
 }
@@ -136,7 +136,7 @@ body {
 
 .auth-error {
   background: #fef2f2;
-  color: var(--danger);
+  color: #ef4444;
   font-size: 13px;
   padding: 10px 14px;
   border-radius: 8px;
@@ -147,14 +147,14 @@ body {
 .auth-switch {
   text-align: center;
   font-size: 14px;
-  color: var(--text-muted);
+  color: #6b7280;
   margin-top: 20px;
 }
 
 .link-btn {
   background: none;
   border: none;
-  color: var(--primary);
+  color: #4f46e5;
   font-weight: 600;
   cursor: pointer;
   font-size: 14px;
@@ -191,7 +191,7 @@ body {
 
 .tasks-stats {
   font-size: 13px;
-  color: var(--text-muted);
+  color: #6b7280;
   margin-top: 4px;
 }
 
@@ -213,7 +213,7 @@ body {
 
 .task-error {
   background: #fef2f2;
-  color: var(--danger);
+  color: #ef4444;
   font-size: 13px;
   padding: 10px 14px;
   border-radius: 8px;
@@ -221,9 +221,9 @@ body {
 }
 
 .task-card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
   padding: 14px 16px;
   margin-bottom: 10px;
   display: flex;
@@ -233,7 +233,7 @@ body {
 }
 
 .task-card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .task-checkbox {
@@ -241,7 +241,7 @@ body {
   height: 20px;
   margin-top: 2px;
   flex-shrink: 0;
-  accent-color: var(--primary);
+  accent-color: #4f46e5;
   cursor: pointer;
 }
 
@@ -259,12 +259,12 @@ body {
 
 .task-title.completed {
   text-decoration: line-through;
-  color: var(--text-muted);
+  color: #6b7280;
 }
 
 .task-meta {
   font-size: 12px;
-  color: var(--text-muted);
+  color: #6b7280;
   margin-top: 4px;
   display: flex;
   gap: 10px;
@@ -272,13 +272,13 @@ body {
 }
 
 .task-meta .done-badge {
-  color: var(--success);
+  color: #10b981;
   font-weight: 600;
 }
 
 .empty-state {
   text-align: center;
-  color: var(--text-muted);
+  color: #6b7280;
   font-size: 14px;
   padding: 40px 20px;
 }
