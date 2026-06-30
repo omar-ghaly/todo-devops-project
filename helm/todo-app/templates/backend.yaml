@@ -48,9 +48,31 @@ kind: Service
 metadata:
   name: todo-backend
   namespace: {{ .Values.namespace }}
+  labels:
+    app: todo-backend
 spec:
   selector:
     app: todo-backend
   ports:
     - port: {{ .Values.backend.port }}
       targetPort: {{ .Values.backend.port }}
+      name: http
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: todo-backend
+  namespace: {{ .Values.namespace }}
+  labels:
+    release: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: todo-backend
+  namespaceSelector:
+    matchNames:
+      - {{ .Values.namespace }}
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
