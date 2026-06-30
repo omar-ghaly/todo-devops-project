@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const rateLimit = require("express-rate-limit");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
+const { register, metricsMiddleware } = require("./config/metrics");
 const { port } = require("./config/env");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
@@ -12,6 +13,9 @@ const taskRoutes = require("./routes/taskRoutes");
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Record metrics for every request (must be early in the middleware chain)
+app.use(metricsMiddleware);
 
 // Basic root route
 app.get("/", (req, res) => {
@@ -35,6 +39,12 @@ app.get("/health", (req, res) => {
     status: "error",
     database: "disconnected",
   });
+});
+
+// Prometheus metrics endpoint
+app.get("/metrics", async (req, res) => {
+  res.set("Content-Type", register.contentType);
+  res.end(await register.metrics());
 });
 
 // API Documentation (Swagger)
